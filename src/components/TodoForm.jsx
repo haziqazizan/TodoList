@@ -22,6 +22,8 @@ export const TodoForm = () => {
 
     addTodo(value);
     setValue("");
+    //as
+    
   };
 
   return (
