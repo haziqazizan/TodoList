@@ -24,6 +24,10 @@ export const TodoForm = () => {
     setValue("");
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="h-screen flex flex-col items-center justify-center">
       <div className="w-[500px] min-h-[200px] bg-blue-900 p-4 rounded-md items-center justify-center">
@@ -48,7 +52,7 @@ export const TodoForm = () => {
           </form>
           <div className="flex flex-col gap-4 items-center justify-center mt-4 ">
             {todos.map((todo, index) => (
-              <TodoList task={todo} key={index} />
+              <TodoList task={todo} key={index} deleteTodo={deleteTodo} />
             ))}
           </div>
         </div>
